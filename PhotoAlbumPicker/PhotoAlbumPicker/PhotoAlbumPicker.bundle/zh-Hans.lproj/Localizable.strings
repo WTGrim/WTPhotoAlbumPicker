@@ -1,0 +1,21 @@
+"PhotoAlbumPickerCamera" = "拍照";
+"PhotoAlbumPickerAlbum" = "相册";
+"PhotoAlbumPickerCancel" = "取消";
+
+"PhotoAlbumPickerOriginal" = "原图";
+"PhotoAlbumPickerDone" = "确定";
+"PhotoAlbumPickerOK" = "确定";
+
+"PhotoAlbumPickerPhotos" = "照片";
+"PhotoAlbumPickerPreview" = "预览";
+
+"PhotoAlbumPickerLoading" = "加载中，请稍后";
+"PhotoAlbumPickerWaiting" = "正在处理...";
+
+"PhotoAlbumPickerSaveImageError" = "保存图片到相册失败";
+"PhotoAlbumPickerMaxSelectedCount" = "最多只能选择%ld张图片";
+
+"PhotoAlbumPickerNoCameraAuthority" = "请在iPhone的\"设置-隐私-相机\"选项中，允许%@访问你的相机";
+"PhotoAlbumPickerNoAblumAuthority" = "请在iPhone的\"设置-隐私-相机\"选项中，允许%@访问你的相册";
+
+"PhotoAlbumPickeriCloudPhoto" = "请在系统相册中下载到本地后重新尝试";

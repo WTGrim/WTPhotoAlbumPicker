@@ -1,0 +1,21 @@
+"PhotoAlbumPickerCamera" = "Camera";
+"PhotoAlbumPickerAlbum" = "Album";
+"PhotoAlbumPickerCancel" = "Cancel";
+
+"PhotoAlbumPickerOriginal" = "Original";
+"PhotoAlbumPickerDone" = "Done";
+"PhotoAlbumPickerOK" = "OK";
+
+"PhotoAlbumPickerPhotos" = "Photos";
+"PhotoAlbumPickerPreview" = "Preview";
+
+"PhotoAlbumPickerLoading" = "loading，waiting please";
+"PhotoAlbumPickerWaiting" = "waiting...";
+
+"PhotoAlbumPickerSaveImageError" = "Save photo to ablum failed";
+"PhotoAlbumPickerMaxSelectedCount" = "Max select count: %ld";
+
+"PhotoAlbumPickerNoCameraAuthority" = "Please allow %@ to access your device's camera in \"Settings\"->\"Privacy\"->\"Camera\"";
+"PhotoAlbumPickerNoAblumAuthority" = "Allow %@ to access your ablum in \"Settings\"->\"Privacy\"->\"Photos\"";
+
+"PhotoAlbumPickeriCloudPhoto" = "Retry after download in ablum";

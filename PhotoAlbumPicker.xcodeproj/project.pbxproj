@@ -20,6 +20,7 @@
 		5D8E0DC71EB3355E00EB15C4 /* PhotoAlertSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E0DC61EB3355E00EB15C4 /* PhotoAlertSheet.m */; };
 		5D9CAA731EB20A9600539205 /* PhotoAlbumCommonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9CAA721EB20A9600539205 /* PhotoAlbumCommonModel.m */; };
 		5DB1C2451EB82C4400531DF7 /* NSBundle+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1C2441EB82C4400531DF7 /* NSBundle+Extension.m */; };
+		5DB1C2691EB852EF00531DF7 /* PhotoAlbumPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5DB1C2681EB852EF00531DF7 /* PhotoAlbumPicker.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		5D9CAA721EB20A9600539205 /* PhotoAlbumCommonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoAlbumCommonModel.m; sourceTree = "<group>"; };
 		5DB1C2431EB82C4400531DF7 /* NSBundle+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Extension.h"; sourceTree = "<group>"; };
 		5DB1C2441EB82C4400531DF7 /* NSBundle+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Extension.m"; sourceTree = "<group>"; };
+		5DB1C2681EB852EF00531DF7 /* PhotoAlbumPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PhotoAlbumPicker.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 		5D765B191EAEF470009B35B6 /* PhotoAlbumPicker */ = {
 			isa = PBXGroup;
 			children = (
+				5DB1C2681EB852EF00531DF7 /* PhotoAlbumPicker.bundle */,
 				5D765B1A1EAEF48F009B35B6 /* PhotoAlbumTool.h */,
 				5D765B1B1EAEF48F009B35B6 /* PhotoAlbumTool.m */,
 				5D9CAA701EB2011700539205 /* PhotoAlbumPickerDefine.h */,
@@ -282,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DB1C2691EB852EF00531DF7 /* PhotoAlbumPicker.bundle in Resources */,
 				5D765AF21EAEF3C6009B35B6 /* LaunchScreen.storyboard in Resources */,
 				5D765AEF1EAEF3C6009B35B6 /* Assets.xcassets in Resources */,
 				5D765AED1EAEF3C6009B35B6 /* Main.storyboard in Resources */,

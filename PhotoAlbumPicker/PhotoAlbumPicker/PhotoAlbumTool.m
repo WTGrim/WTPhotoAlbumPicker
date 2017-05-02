@@ -30,6 +30,7 @@
     return photoAlbumTool;
 }
 
+#pragma mark - 保存图片
 - (void)saveImageToAlbum:(UIImage *)image compeletd:(void (^)(BOOL, PHAsset *))completed{
     
 //    PHAuthorizationStatus stauts = [PHPhotoLibrary authorizationStatus];

@@ -1,0 +1,21 @@
+"PhotoAlbumPickerCamera" = "カメラ";
+"PhotoAlbumPickerAlbum" = "アルバム";
+"PhotoAlbumPickerCancel" = "取り消し";
+
+"PhotoAlbumPickerOriginal" = "原図";
+"PhotoAlbumPickerDone" = "確定";
+"PhotoAlbumPickerOK" = "確定";
+
+"PhotoAlbumPickerPhotos" = "写真";
+"PhotoAlbumPickerPreview" = "プレビュー";
+
+"PhotoAlbumPickerLoading" = "ロード中，お待ち下さい";
+"PhotoAlbumPickerWaiting" = "後ほど...";
+
+"PhotoAlbumPickerSaveImageError" = "アルバムには写真を保存する";
+"PhotoAlbumPickerMaxSelectedCount" = "最大選択数: %ld";
+
+"PhotoAlbumPickerNoCameraAuthority" = "「設定」->「プライパシー」->「カメラ」から、%@があなたのデバイスのカメラにアクセスする許可をしてください";
+"PhotoAlbumPickerNoAblumAuthority" = "%@があなたのアルバムにアクセスするには「設定」->「プライバシー」->「写真」";
+
+"PhotoAlbumPickeriCloudPhoto" = "システムのアルバムにダウンロードしてからダウンロードしてください";
