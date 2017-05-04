@@ -19,3 +19,11 @@ typedef void(^CancelBlock)();
 @property(nonatomic, copy)CompletedBlock completedBlock;
 
 @end
+
+@interface AlbumListCell : UITableViewCell
+
+@property(nonatomic, strong)UIImageView *headImageView;
+@property(nonatomic, strong)UILabel *titleInfo;
+@property(nonatomic, strong)UILabel *count;
+
+@end

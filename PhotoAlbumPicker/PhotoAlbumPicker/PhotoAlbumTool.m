@@ -41,6 +41,23 @@
 - (NSArray<AlbumList *> *)getAlbumList{
     
     NSMutableArray <AlbumList *>*listArr = [NSMutableArray array];
+    
+    PHFetchResult *smartAlbum = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+    [smartAlbum enumerateObjectsUsingBlock:^(PHAssetCollection *  _Nonnull collection, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        if (collection.assetCollectionSubtype != 202 && collection.assetCollectionSubtype < 212) {//视频和最近删除除外
+            NSArray <PHAsset *>* asset = [self getPhotosInAsset:collection timeAsc:NO];
+            if (asset.count > 0) {
+                AlbumList *list = [[AlbumList alloc]init];
+                list.title = collection.localizedTitle;
+                list.photoCount = asset.count;
+                list.firstImageAsset = asset.firstObject;
+                list.assetCollection = collection;
+                [listArr addObject:list];
+            }
+        }
+    }];
+    
     PHFetchResult *userAlbum = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeSmartAlbumUserLibrary options:nil];
     [userAlbum enumerateObjectsUsingBlock:^(PHAssetCollection *  _Nonnull collection, NSUInteger idx, BOOL * _Nonnull stop) {
         
@@ -55,19 +72,6 @@
         }
     }];
     
-    PHFetchResult *smartAlbum = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
-    [smartAlbum enumerateObjectsUsingBlock:^(PHAssetCollection *  _Nonnull collection, NSUInteger idx, BOOL * _Nonnull stop) {
-       
-        if (collection.assetCollectionSubtype != 202 || collection.assetCollectionSubtype < 212) {//视频和最近删除除外
-            NSArray <PHAsset *>* asset = [self getPhotosInAsset:collection timeAsc:NO];
-            AlbumList *list = [[AlbumList alloc]init];
-            list.title = collection.localizedTitle;
-            list.photoCount = asset.count;
-            list.firstImageAsset = asset.firstObject;
-            list.assetCollection = collection;
-            [listArr addObject:list];
-        }
-    }];
     return listArr;
 }
 

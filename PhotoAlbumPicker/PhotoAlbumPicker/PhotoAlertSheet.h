@@ -25,6 +25,6 @@
 
 @interface PhotoNavigateController : UINavigationController
 
-@property(nonatomic, assign)UIStatusBarStyle statusBarStyle;
+@property(nonatomic, assign)UIStatusBarStyle previousStatusBarStyle;
 
 @end
