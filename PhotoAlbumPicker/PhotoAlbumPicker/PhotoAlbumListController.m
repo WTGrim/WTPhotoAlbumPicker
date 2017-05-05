@@ -82,7 +82,7 @@ static NSString *const cellId = @"cellId";
     preview.selectedPhotos = self.selectPhotos.mutableCopy;
     preview.assetCollection = list.assetCollection;
     preview.isSelectedOrigin = self.isSelectOrigin;
-    preview.maxSeletedCount = self.maxSelectCount;
+    preview.maxSelectedCount = self.maxSelectCount;
     preview.cancelBlock = self.cancelBlock;
     preview.completedBlock = self.completedBlock;
     preview.listVC = self;
@@ -145,7 +145,8 @@ static NSString *const cellId = @"cellId";
     
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.headImageView = [UIImageView new];
-    self.headImageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.headImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.headImageView.clipsToBounds = YES;
     [self.contentView addSubview:self.headImageView];
     self.titleInfo = [UILabel new];
     self.titleInfo.font = [UIFont systemFontOfSize:15];

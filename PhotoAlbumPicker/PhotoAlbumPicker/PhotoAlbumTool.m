@@ -135,7 +135,7 @@
     options.networkAccessAllowed = true;
     [[PHCachingImageManager defaultManager]requestImageDataForAsset:asset options:options resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
        
-        BOOL success = ![info objectForKey:PHImageCancelledKey] && ![info objectForKey:PHImageErrorKey] && ![info objectForKey:PHImageResultIsDegradedKey];
+        BOOL success = ![[info objectForKey:PHImageCancelledKey] boolValue] && ![info objectForKey:PHImageErrorKey] && ![[info objectForKey:PHImageResultIsDegradedKey] boolValue];
         if (success && completed) {
             CGFloat length = imageData.length / (CGFloat)UIImageJPEGRepresentation([UIImage imageWithData:imageData], 1).length;
             NSData *data = UIImageJPEGRepresentation([UIImage imageWithData:imageData], scale == 1?length:length * 0.5);
@@ -152,7 +152,7 @@
     __block NSInteger count = photos.count;
     weakify(self);
     for (int i = 0; i < photos.count; i++) {
-        PhotoSelectModel *model = [[PhotoSelectModel alloc]init];
+        PhotoSelectModel *model = photos[i];
         [[PHCachingImageManager defaultManager]requestImageDataForAsset:model.asset options:nil resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
             strongify(weakSelf);
             storage += imageData.length;

@@ -10,11 +10,10 @@
 @class PhotoSelectModel;
 @class PHAsset;
 
-typedef void(^SelectBtnBlock)(NSArray<PhotoSelectModel *> *selectPhotos);
 @interface PhotoPreviewCell : UICollectionViewCell
 
-@property(nonatomic, copy)SelectBtnBlock selectBtnBlock;
+@property(nonatomic, strong)UIImageView *headImageView;
+@property(nonatomic, strong)UIButton *selectBtn;
 
-- (void)setCellWithAsset:(PHAsset *)asset selectPhotos:(NSArray <PhotoSelectModel *> *)selectPhotos maxSelectCount:(NSInteger)maxSelectCount indexPath:(NSIndexPath *)indexPath;
 
 @end

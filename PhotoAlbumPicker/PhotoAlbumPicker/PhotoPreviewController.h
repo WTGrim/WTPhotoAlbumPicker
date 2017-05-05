@@ -18,7 +18,7 @@ typedef void(^CancelBlock)();
 @interface PhotoPreviewController : UIViewController
 
 @property(nonatomic, strong)NSMutableArray<PhotoSelectModel *> *selectedPhotos;
-@property(nonatomic, assign)NSInteger maxSeletedCount;
+@property(nonatomic, assign)NSInteger maxSelectedCount;
 @property(nonatomic, strong)PHAssetCollection *assetCollection;
 @property(nonatomic, assign)BOOL isSelectedOrigin;
 @property(nonatomic, weak)PhotoAlbumListController *listVC;

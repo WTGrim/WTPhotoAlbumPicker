@@ -86,7 +86,6 @@ typedef void(^CallBack)(NSArray <UIImage *>* photos, NSArray <PhotoSelectModel *
 //        }
         [self presentPhotoLibrary];
     }
-
 }
 
 - (void)presentPhotoLibrary{
