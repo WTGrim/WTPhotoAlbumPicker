@@ -13,6 +13,7 @@
 #import "PhotoAlbumCommonModel.h"
 #import "PhotoPreviewCell.h"
 #import "PhotoAlbumListController.h"
+#import "PhotoDetailViewController.h"
 
 #define kMargin  15
 #define kMinMargin 5
@@ -117,6 +118,39 @@ static NSString *const cellId = @"cellId";
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [self pushDetailWithData:self.dataArray selectedIndex:indexPath.row];
+}
+
+- (void)pushDetailWithData:(NSArray *)array selectedIndex:(NSInteger)index{
+    
+    PhotoDetailViewController *detail = [[PhotoDetailViewController alloc]init];
+    detail.asset = array;
+    detail.maxSelectCount = self.maxSelectedCount;
+    detail.selectPhotos = self.selectedPhotos;
+    detail.isSelectedOrigin = self.isSelectedOrigin;
+    detail.selectIndex = index;
+    weakify(self);
+    detail.backBtnBlock = ^(NSArray<PhotoSelectModel *> *selectPhotos, BOOL isSelectOrigin) {
+        strongify(weakSelf);
+        strongSelf.isSelectedOrigin = isSelectOrigin;
+        [strongSelf.selectedPhotos removeAllObjects];
+        [strongSelf.selectedPhotos addObjectsFromArray:selectPhotos];
+        [strongSelf.collectionView reloadData];
+        [strongSelf setOriginImageBytes];
+        [strongSelf judgeStatus];
+    };
+    
+    detail.completedBtnBlock = ^(NSArray<PhotoSelectModel *> *selectPhotos, BOOL isSelectOrigin) {
+        strongify(weakSelf);
+        strongSelf.isSelectedOrigin = isSelectOrigin;
+        [strongSelf.selectedPhotos removeAllObjects];
+        [strongSelf.selectedPhotos addObjectsFromArray:selectPhotos];
+        [strongSelf completedBtnAction];
+    };
+    [self.navigationController pushViewController:detail animated:true];
+}
+
 - (void)cellSelectBtnAction:(UIButton *)btn{
     
     if (self.selectedPhotos.count >= self.maxSelectedCount && btn.selected == false) {
@@ -198,6 +232,7 @@ static NSString *const cellId = @"cellId";
     [originBtn setTitleColor:RGB(80, 180, 234) forState:UIControlStateSelected];
     [originBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     originBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+    [originBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -5, 0, 5)];
     [originBtn addTarget:self action:@selector(originBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     self.originBtn = originBtn;
     [bottomView addSubview:self.originBtn];

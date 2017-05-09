@@ -16,10 +16,14 @@
 		5D765AFD1EAEF3C6009B35B6 /* PhotoAlbumPickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D765AFC1EAEF3C6009B35B6 /* PhotoAlbumPickerTests.m */; };
 		5D765B081EAEF3C6009B35B6 /* PhotoAlbumPickerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D765B071EAEF3C6009B35B6 /* PhotoAlbumPickerUITests.m */; };
 		5D765B1C1EAEF48F009B35B6 /* PhotoAlbumTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D765B1B1EAEF48F009B35B6 /* PhotoAlbumTool.m */; };
+		5D864DB11EBC799B00FC5D6B /* PhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D864DB01EBC799B00FC5D6B /* PhotoDetailViewController.m */; };
+		5D864DB41EBC80D300FC5D6B /* btn_circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D864DB21EBC80D300FC5D6B /* btn_circle@2x.png */; };
+		5D864DB51EBC80D300FC5D6B /* btn_circle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D864DB31EBC80D300FC5D6B /* btn_circle@3x.png */; };
 		5D8910E71EB9833A00EABE7D /* PhotoPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8910E61EB9833A00EABE7D /* PhotoPreviewCell.m */; };
 		5D8E0DC41EB3342700EB15C4 /* PhotoAlbumListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E0DC31EB3342700EB15C4 /* PhotoAlbumListController.m */; };
 		5D8E0DC71EB3355E00EB15C4 /* PhotoAlertSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E0DC61EB3355E00EB15C4 /* PhotoAlertSheet.m */; };
 		5D9CAA731EB20A9600539205 /* PhotoAlbumCommonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9CAA721EB20A9600539205 /* PhotoAlbumCommonModel.m */; };
+		5DACC0A41EBDA851003454E6 /* PhotoDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DACC0A31EBDA851003454E6 /* PhotoDetailCell.m */; };
 		5DB1C2451EB82C4400531DF7 /* NSBundle+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1C2441EB82C4400531DF7 /* NSBundle+Extension.m */; };
 		5DB1C2691EB852EF00531DF7 /* PhotoAlbumPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5DB1C2681EB852EF00531DF7 /* PhotoAlbumPicker.bundle */; };
 		5DB1C26C1EB873EC00531DF7 /* PhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1C26B1EB873EC00531DF7 /* PhotoPreviewController.m */; };
@@ -72,6 +76,10 @@
 		5D765B091EAEF3C6009B35B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D765B1A1EAEF48F009B35B6 /* PhotoAlbumTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAlbumTool.h; sourceTree = "<group>"; };
 		5D765B1B1EAEF48F009B35B6 /* PhotoAlbumTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoAlbumTool.m; sourceTree = "<group>"; };
+		5D864DAF1EBC799B00FC5D6B /* PhotoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailViewController.h; sourceTree = "<group>"; };
+		5D864DB01EBC799B00FC5D6B /* PhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewController.m; sourceTree = "<group>"; };
+		5D864DB21EBC80D300FC5D6B /* btn_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_circle@2x.png"; sourceTree = "<group>"; };
+		5D864DB31EBC80D300FC5D6B /* btn_circle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_circle@3x.png"; sourceTree = "<group>"; };
 		5D8910E51EB9833A00EABE7D /* PhotoPreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPreviewCell.h; sourceTree = "<group>"; };
 		5D8910E61EB9833A00EABE7D /* PhotoPreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPreviewCell.m; sourceTree = "<group>"; };
 		5D8E0DC21EB3342700EB15C4 /* PhotoAlbumListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAlbumListController.h; sourceTree = "<group>"; };
@@ -81,6 +89,8 @@
 		5D9CAA701EB2011700539205 /* PhotoAlbumPickerDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoAlbumPickerDefine.h; sourceTree = "<group>"; };
 		5D9CAA711EB20A9600539205 /* PhotoAlbumCommonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAlbumCommonModel.h; sourceTree = "<group>"; };
 		5D9CAA721EB20A9600539205 /* PhotoAlbumCommonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoAlbumCommonModel.m; sourceTree = "<group>"; };
+		5DACC0A21EBDA851003454E6 /* PhotoDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailCell.h; sourceTree = "<group>"; };
+		5DACC0A31EBDA851003454E6 /* PhotoDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailCell.m; sourceTree = "<group>"; };
 		5DB1C2431EB82C4400531DF7 /* NSBundle+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Extension.h"; sourceTree = "<group>"; };
 		5DB1C2441EB82C4400531DF7 /* NSBundle+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Extension.m"; sourceTree = "<group>"; };
 		5DB1C2681EB852EF00531DF7 /* PhotoAlbumPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PhotoAlbumPicker.bundle; sourceTree = "<group>"; };
@@ -207,6 +217,10 @@
 				5DB1C26B1EB873EC00531DF7 /* PhotoPreviewController.m */,
 				5D8910E51EB9833A00EABE7D /* PhotoPreviewCell.h */,
 				5D8910E61EB9833A00EABE7D /* PhotoPreviewCell.m */,
+				5D864DAF1EBC799B00FC5D6B /* PhotoDetailViewController.h */,
+				5D864DB01EBC799B00FC5D6B /* PhotoDetailViewController.m */,
+				5DACC0A21EBDA851003454E6 /* PhotoDetailCell.h */,
+				5DACC0A31EBDA851003454E6 /* PhotoDetailCell.m */,
 			);
 			path = PhotoAlbumPicker;
 			sourceTree = "<group>";
@@ -214,6 +228,8 @@
 		5DB1C26D1EB8772200531DF7 /* PhotoAlbumPickerResource */ = {
 			isa = PBXGroup;
 			children = (
+				5D864DB21EBC80D300FC5D6B /* btn_circle@2x.png */,
+				5D864DB31EBC80D300FC5D6B /* btn_circle@3x.png */,
 				5DB1C26E1EB8773400531DF7 /* btn_original_circle.png */,
 				5DB1C26F1EB8773400531DF7 /* btn_original_circle@2x.png */,
 				5DB1C2701EB8773400531DF7 /* btn_original_circle@3x.png */,
@@ -339,9 +355,11 @@
 				5DB1C2791EB8773400531DF7 /* btn_original_circle.png in Resources */,
 				5DB1C2801EB8773400531DF7 /* btn_unselected@2x.png in Resources */,
 				5DB1C2691EB852EF00531DF7 /* PhotoAlbumPicker.bundle in Resources */,
+				5D864DB41EBC80D300FC5D6B /* btn_circle@2x.png in Resources */,
 				5DB1C27A1EB8773400531DF7 /* btn_original_circle@2x.png in Resources */,
 				5D765AF21EAEF3C6009B35B6 /* LaunchScreen.storyboard in Resources */,
 				5D765AEF1EAEF3C6009B35B6 /* Assets.xcassets in Resources */,
+				5D864DB51EBC80D300FC5D6B /* btn_circle@3x.png in Resources */,
 				5D765AED1EAEF3C6009B35B6 /* Main.storyboard in Resources */,
 				5DB1C27B1EB8773400531DF7 /* btn_original_circle@3x.png in Resources */,
 				5DB1C2811EB8773400531DF7 /* btn_unselected@3x.png in Resources */,
@@ -376,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D765B1C1EAEF48F009B35B6 /* PhotoAlbumTool.m in Sources */,
+				5D864DB11EBC799B00FC5D6B /* PhotoDetailViewController.m in Sources */,
 				5D8E0DC41EB3342700EB15C4 /* PhotoAlbumListController.m in Sources */,
 				5DB1C2451EB82C4400531DF7 /* NSBundle+Extension.m in Sources */,
 				5D765AEA1EAEF3C6009B35B6 /* ViewController.m in Sources */,
@@ -383,6 +402,7 @@
 				5D8910E71EB9833A00EABE7D /* PhotoPreviewCell.m in Sources */,
 				5D765AE71EAEF3C6009B35B6 /* AppDelegate.m in Sources */,
 				5D765AE41EAEF3C6009B35B6 /* main.m in Sources */,
+				5DACC0A41EBDA851003454E6 /* PhotoDetailCell.m in Sources */,
 				5DB1C26C1EB873EC00531DF7 /* PhotoPreviewController.m in Sources */,
 				5D8E0DC71EB3355E00EB15C4 /* PhotoAlertSheet.m in Sources */,
 			);
@@ -535,7 +555,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 624TUL8XMA;
 				INFOPLIST_FILE = PhotoAlbumPicker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Dwt.PhotoAlbumPicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -548,7 +568,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 624TUL8XMA;
 				INFOPLIST_FILE = PhotoAlbumPicker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Dwt.PhotoAlbumPicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
