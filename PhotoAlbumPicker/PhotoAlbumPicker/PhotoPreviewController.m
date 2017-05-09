@@ -127,7 +127,7 @@ static NSString *const cellId = @"cellId";
     PhotoDetailViewController *detail = [[PhotoDetailViewController alloc]init];
     detail.asset = array;
     detail.maxSelectCount = self.maxSelectedCount;
-    detail.selectPhotos = self.selectedPhotos;
+    detail.selectPhotos = self.selectedPhotos.mutableCopy;
     detail.isSelectedOrigin = self.isSelectedOrigin;
     detail.selectIndex = index;
     weakify(self);
@@ -286,7 +286,7 @@ static NSString *const cellId = @"cellId";
 
 - (void)backAction{
     
-    self.listVC.selectPhotos = self.selectedPhotos;
+    self.listVC.selectPhotos = self.selectedPhotos.mutableCopy;
     self.listVC.isSelectOrigin = self.isSelectedOrigin;
     [self.navigationController popViewControllerAnimated:true];
 }

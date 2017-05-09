@@ -149,7 +149,7 @@
 
 - (CGRect)zoomWithScale:(CGFloat)scale center:(CGPoint)center{
     
-    CGRect zoom = CGRectZero;
+    CGRect zoom ;
     zoom.size.height = self.scrollView.frame.size.height / scale;
     zoom.size.width = self.scrollView.frame.size.width / scale;
     zoom.origin.x = center.x - (zoom.size.width * 0.5);
@@ -165,6 +165,7 @@
     CGFloat offsetX = scrollView.frame.size.width > scrollView.contentSize.width?(scrollView.frame.size.width - scrollView.contentSize.width) * 0.5 :0.0;
     CGFloat offsetY = scrollView.frame.size.height > scrollView.contentSize.height ? (scrollView.frame.size.height - scrollView.contentSize.height) * 0.5 : 0.0;
     self.containerView.center = CGPointMake(scrollView.contentSize.width * .5 + offsetX, scrollView.contentSize.height * 0.5 + offsetY);
+    self.detailImageView.frame = self.containerView.frame;
 }
 
 @end

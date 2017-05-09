@@ -66,10 +66,10 @@ static NSString *const cellId = @"cellId";
 - (void)setNav{
     
     UIImage *back = [UIImage imageNamed:@"backBtn"];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:back style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:back style:UIBarButtonItemStylePlain target:self action:@selector(backPopAction)];
     
     self.rightSelectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.rightSelectBtn.frame = CGRectMake(0, 0, 25, 25);
+    self.rightSelectBtn.frame = CGRectMake(0, 0, 22, 22);
     [self.rightSelectBtn setBackgroundImage:[UIImage imageNamed:@"btn_circle"] forState:UIControlStateNormal];
     [self.rightSelectBtn setBackgroundImage:[UIImage imageNamed:@"btn_selected"] forState:UIControlStateSelected];
     [self.rightSelectBtn addTarget:self action:@selector(rightSelectBtnAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -279,10 +279,11 @@ static NSString *const cellId = @"cellId";
     }
 }
 
-- (void)backAction{
-    if (self.completedBtnBlock) {
-        self.completedBtnBlock(self.selectPhotos, self.isSelectedOrigin);
+- (void)backPopAction{
+    if (self.backBtnBlock) {
+        self.backBtnBlock(self.selectPhotos, self.isSelectedOrigin);
     }
+    self.collectionView.backgroundColor = [UIColor clearColor];
     [self.navigationController popViewControllerAnimated:true];
 }
 

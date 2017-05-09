@@ -96,14 +96,23 @@ typedef void(^CallBack)(NSArray <UIImage *>* photos, NSArray <PhotoSelectModel *
     list.selectPhotos = self.seletedPhotos.mutableCopy;
     weakify(self);
     __weak typeof(list)weakList = list;
-    [list setCompletedBlock:^(NSArray<PhotoSelectModel *> *selectedPhotos, BOOL isSeletedOrigin){
+//    [list setCompletedBlock:^(NSArray<PhotoSelectModel *> *selectedPhotos, BOOL isSeletedOrigin){
+//        strongify(weakSelf);
+//        __strong typeof(weakList)strongList = weakList;
+//        strongSelf.isSelectedOriginPhoto = isSeletedOrigin;
+//        [strongSelf.seletedPhotos removeAllObjects];
+//        [strongSelf.seletedPhotos addObjectsFromArray:selectedPhotos];
+//        [strongSelf getSelectedPhotos:strongList];
+//    }];
+    
+    list.completedBlock = ^(NSArray<PhotoSelectModel *> *selectedPhotos, BOOL isSeletedOrigin) {
         strongify(weakSelf);
         __strong typeof(weakList)strongList = weakList;
         strongSelf.isSelectedOriginPhoto = isSeletedOrigin;
         [strongSelf.seletedPhotos removeAllObjects];
         [strongSelf.seletedPhotos addObjectsFromArray:selectedPhotos];
         [strongSelf getSelectedPhotos:strongList];
-    }];
+    };
     
     [self presentVc:list];
 }
