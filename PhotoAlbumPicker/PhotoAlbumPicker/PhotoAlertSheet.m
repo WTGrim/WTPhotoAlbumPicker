@@ -50,10 +50,35 @@ typedef void(^CallBack)(NSArray <UIImage *>* photos, NSArray <PhotoSelectModel *
         self.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
         self.maxPreviewCount = 20;
         self.maxAllowedSelectCount = 10;
+        if (![self hasPhotoAblumAuthority]) {
+            //监听相册变化
+            [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
+        }
     }
     return self;
 }
 
+- (void)dealloc{
+    [[PHPhotoLibrary sharedPhotoLibrary]unregisterChangeObserver:self];
+}
+
+- (void)photoLibraryDidChange:(PHChange *)changeInstance{
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        if (self.preview) {
+            
+        }else{
+            [self presentPhotoLibrary];
+        }
+        [[PHPhotoLibrary sharedPhotoLibrary]unregisterChangeObserver:self];
+    });
+}
+
+#pragma mark - 部分预览图片
+- (void)showPreviewPhotosWithRoot:(UIViewController *)root lastSelectedModels:(NSArray<PhotoSelectModel *> *)lastSeletedModels completed:(void (^)(NSArray<UIImage *> *, NSArray<PhotoSelectModel *> *))completed{
+    
+}
+
+#pragma mark - 全部图片
 - (void)showPhotosInAllAlbumWithRoot:(UIViewController *)root lastSelectedModels:(NSArray<PhotoSelectModel *> *)lastSeletedModels completed:(void (^)(NSArray<UIImage *> *, NSArray<PhotoSelectModel *> *))completed{
     [self showPreview:NO root:root lastSelectedModels:lastSeletedModels completed:completed];
 }
@@ -67,7 +92,7 @@ typedef void(^CallBack)(NSArray <UIImage *>* photos, NSArray <PhotoSelectModel *
     [self.seletedPhotos removeAllObjects];
     [self.seletedPhotos addObjectsFromArray:lastSeletedModels];
     
-    PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
+//    PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
     [self addAssociatedWithRoot];
     if (preview) {
 //        if (status == PHAuthorizationStatusAuthorized) {
@@ -78,13 +103,11 @@ typedef void(^CallBack)(NSArray <UIImage *>* photos, NSArray <PhotoSelectModel *
 //            NSLog(@"没有权限");
 //        }
     } else {
-//        if (status == PHAuthorizationStatusAuthorized) {
-//            [self presentPhotoLibrary];
-//        } else if (status == PHAuthorizationStatusRestricted ||
-//                   status == PHAuthorizationStatusDenied) {
-//            [self presentPhotoLibrary];
-//        }
-        [self presentPhotoLibrary];
+        if ([self hasPhotoAblumAuthority]) {
+            [self presentPhotoLibrary];
+        } else{
+            NSLog(@"没有访问权限");
+        }
     }
 }
 
@@ -94,17 +117,9 @@ typedef void(^CallBack)(NSArray <UIImage *>* photos, NSArray <PhotoSelectModel *
     PhotoAlbumListController *list = [[PhotoAlbumListController alloc]initWithStyle:UITableViewStylePlain];
     list.maxSelectCount = self.maxAllowedSelectCount;
     list.selectPhotos = self.seletedPhotos.mutableCopy;
+    
     weakify(self);
     __weak typeof(list)weakList = list;
-//    [list setCompletedBlock:^(NSArray<PhotoSelectModel *> *selectedPhotos, BOOL isSeletedOrigin){
-//        strongify(weakSelf);
-//        __strong typeof(weakList)strongList = weakList;
-//        strongSelf.isSelectedOriginPhoto = isSeletedOrigin;
-//        [strongSelf.seletedPhotos removeAllObjects];
-//        [strongSelf.seletedPhotos addObjectsFromArray:selectedPhotos];
-//        [strongSelf getSelectedPhotos:strongList];
-//    }];
-    
     list.completedBlock = ^(NSArray<PhotoSelectModel *> *selectedPhotos, BOOL isSeletedOrigin) {
         strongify(weakSelf);
         __strong typeof(weakList)strongList = weakList;
